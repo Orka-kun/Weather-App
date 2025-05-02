@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { WeatherData } from '../types/weather';
 
-// Thunk to fetch weather data
+
 export const fetchWeather = createAsyncThunk(
   'weather/fetchWeather',
   async (city: string, { rejectWithValue }) => {
     try {
-      const apiKey = import.meta.env.VITE_API_KEY; // Use Vite's environment variable access
+      const apiKey = import.meta.env.VITE_API_KEY;
       console.log('City:', city);
       console.log('API Key:', apiKey);
       if (!apiKey) {
