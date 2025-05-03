@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchWeather } from '../store/weatherSlice';
+import { AppDispatch } from '../store';
 
 const SearchBar: React.FC = () => {
   const [city, setCity] = useState('');
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && city.trim()) {
-      dispatch(fetchWeather(city));
+      dispatch(fetchWeather(city.trim()));
       setCity('');
     }
   };
