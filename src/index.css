@@ -54,12 +54,12 @@
 .animate-gradient-light {
   background: linear-gradient(270deg, #a3bffa, #93c5fd, #bfdbfe, #c7d2fe);
   background-size: 400% 400%;
-  animation: gradientLight 15s ease infinite;
+  animation: gradientLight 7s ease infinite;
 }
 .animate-gradient-dark {
   background: linear-gradient(270deg, #1f2937, #374151, #4b5563, #6b7280);
   background-size: 400% 400%;
-  animation: gradientDark 15s ease infinite;
+  animation: gradientDark 7s ease infinite;
 }
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
@@ -84,5 +84,23 @@
   50% { transform: scale(1.2) rotate(10deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseSlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+  
+
         
       
