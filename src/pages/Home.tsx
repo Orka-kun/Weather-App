@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import SearchBar from '../components/SearchBar';
 import WeatherCard from '../components/WeatherCard';
 import ErrorMessage from '../components/ErrorMessage';
-import { RootState } from '../store';
+import { RootState, AppDispatch } from '../store'; // Import AppDispatch
 import { fetchWeather } from '../store/weatherSlice';
 import logo from '../assets/logo.jpeg';
 
 const Home: React.FC = () => {
   const { data, loading, error, history } = useSelector((state: RootState) => state.weather);
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch(); // Use typed AppDispatch
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [currentHeadline, setCurrentHeadline] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -62,6 +62,7 @@ const Home: React.FC = () => {
 
   return (
     <div className={`relative h-screen flex flex-col ${isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black animate-gradient-dark' : 'bg-gradient-to-br from-blue-100 via-blue-300 to-indigo-200 animate-gradient-light'} transition-colors duration-500 font-poppins overflow-hidden`}>
+      
 
       <div className="absolute inset-0 z-0 opacity-20">
         <svg className="w-full h-64 sm:h-80 md:h-full animate-slide-in" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
       <div className="relative z-10 flex flex-col items-center justify-center pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8 md:pb-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full max-w-6xl mx-auto">
           <h1
-            key={currentHeadline} 
+            key={currentHeadline}
             className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center dark:text-white bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent animate-slide-up-fade max-w-[90%] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto drop-shadow-xl"
           >
             {headlines[currentHeadline]}
