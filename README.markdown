@@ -90,6 +90,6 @@ This project is licensed under the MIT License.
 For issues or questions, open an issue on GitHub or contact the developer at `orkadas@gmail.com`.
 
 ## Acknowledgments
-- Built with ❤️ using React, Redux Toolkit, Tailwind CSS, and Vite.
+- Built with React, Redux Toolkit, Tailwind CSS, and Typescript.
 - Weather data powered by [OpenWeatherMap](https://openweathermap.org).
 - Inspired by modern UI designs with animated elements and responsive layouts.
