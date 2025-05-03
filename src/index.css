@@ -39,3 +39,50 @@
 .animate-slide-in {
   animation: slideIn 1.5s ease-out;
 }
+
+        
+@keyframes gradientLight {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes gradientDark {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-light {
+  background: linear-gradient(270deg, #a3bffa, #93c5fd, #bfdbfe, #c7d2fe);
+  background-size: 400% 400%;
+  animation: gradientLight 15s ease infinite;
+}
+.animate-gradient-dark {
+  background: linear-gradient(270deg, #1f2937, #374151, #4b5563, #6b7280);
+  background-size: 400% 400%;
+  animation: gradientDark 15s ease infinite;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes underlineGlow {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes scaleFade {
+  0% { opacity: 0; transform: scale(0.95); }
+  80% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes popRotate {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+        
+      
